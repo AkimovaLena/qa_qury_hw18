@@ -1,22 +1,21 @@
 package auth;
 
 import io.qameta.allure.Step;
-import models.AuthResponseBody;
-import org.openqa.selenium.Cookie;
-import io.restassured.response.Response;
 import models.AuthRequestBody;
 import models.AuthResponseBody;
+import org.openqa.selenium.Cookie;
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static io.restassured.RestAssured.given;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static specs.CreateSpec.createRequestSpec;
 import static specs.CreateSpec.responseSpec200;
 
 public class Auth {
 
-    @Step ("Получение данных для авторизации")
-    public AuthResponseBody authApi (String userName, String password) {
+    @Step("Получение данных для авторизации")
+    public AuthResponseBody authApi(String userName, String password) {
         AuthRequestBody request = new AuthRequestBody();
         request.setUserName(userName);
         request.setPassword(password);
@@ -27,6 +26,7 @@ public class Auth {
                 .then()
                 .spec(responseSpec200)
                 .extract().as(AuthResponseBody.class);
+        assertNotNull(authResponse.getToken());
         return authResponse;
     }
 

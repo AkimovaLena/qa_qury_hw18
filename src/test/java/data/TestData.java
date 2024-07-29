@@ -1,7 +1,7 @@
 package data;
 
 public class TestData {
-    public static String login = "test123456",
+    public static final String login = "ElenaAkimova",
             password = "Test123456@",
-            isbn = "9781449331818";
+            isbn = "9781449325862";
 }

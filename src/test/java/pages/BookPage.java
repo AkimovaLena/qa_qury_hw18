@@ -4,15 +4,13 @@ import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
-import static com.codeborne.selenide.Condition.exist;
-import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
 public class BookPage {
 
     public final SelenideElement deleteButton = $("#delete-record-undefined"),
             confirmButton = $("#closeSmallModal-ok"),
-            bookRow = $(".rt-tbody").$(".rt-tr-group"),
             noRowsFoundLabel = $(".profile-wrapper").$(".rt-noData");
 
 
@@ -38,9 +36,9 @@ public class BookPage {
         return this;
     }
 
-    @Step("Check the book list is empty")
+    @Step("Проверяем, что список книг пустой")
     public BookPage checkBooksListIsEmpty() {
-        noRowsFoundLabel.shouldHave(text("No rows found"));
+        noRowsFoundLabel.shouldBe(visible).shouldHave(text("No rows found"));
         return this;
     }
 }
