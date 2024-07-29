@@ -19,6 +19,8 @@ public class TestBase {
         Configuration.pageLoadStrategy = "eager";
         Configuration.timeout = 6000;
 
+        RestAssured.baseURI = "https://demoqa.com";
+
         SelenideLogger.addListener("allure", new AllureSelenide());
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
