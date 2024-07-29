@@ -24,9 +24,11 @@ public class DeleteBookTest extends TestBase {
         steps.checkBooksListIsEmpty(steps.getBooksList(authData, login, password));
         steps.addBook(authData, isbn);
         steps.checkBooksListIsNotEmpty(steps.getBooksList(authData, login, password));
+//        auth.setCookiesInBrowser(authData);
+        bookPage.openBookStore();
         auth.setCookiesInBrowser(authData);
-        bookPage.openBookStore()
-                .checkBookInProfile(isbn)
+        bookPage.openBookStore();
+        bookPage.checkBookInProfile(isbn)
                 .deleteBookInProfile(isbn)
                 .checkBooksListIsEmpty();
         steps.checkBooksListIsEmpty(steps.getBooksList(authData, login, password));
