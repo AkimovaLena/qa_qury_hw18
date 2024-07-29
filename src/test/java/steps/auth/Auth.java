@@ -32,7 +32,7 @@ public class Auth {
 
     @Step("Авторизация пользователя")
     public static void setCookiesInBrowser(AuthResponseBody authResponse) {
-        open("/favicon.ico");
+        open("/images/Toolsqa.jpg");
         getWebDriver().manage().addCookie(new Cookie("userID", authResponse.getUserId()));
         getWebDriver().manage().addCookie(new Cookie("expires", authResponse.getExpires()));
         getWebDriver().manage().addCookie(new Cookie("token", authResponse.getToken()));

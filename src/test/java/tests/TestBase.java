@@ -16,7 +16,7 @@ public class TestBase {
     @BeforeAll
     static void beforeAll() {
         SelenideLogger.addListener("allure", new AllureSelenide());
-        RestAssured.baseURI = "https://demoqa.com";
+        RestAssured.baseURI = System.getProperty("stand", "https://demoqa.com");
         Configuration.pageLoadStrategy = "eager";
         Configuration.browserSize = System.getProperty("browser_size", "1920x1080");
         Configuration.browser = System.getProperty("browser", "chrome");
