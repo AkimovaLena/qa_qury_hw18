@@ -36,7 +36,6 @@ public class Auth {
         getWebDriver().manage().addCookie(new Cookie("userID", authResponse.getUserId()));
         getWebDriver().manage().addCookie(new Cookie("expires", authResponse.getExpires()));
         getWebDriver().manage().addCookie(new Cookie("token", authResponse.getToken()));
-        open("");
     }
 
 }
