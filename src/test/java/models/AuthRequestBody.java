@@ -5,5 +5,5 @@ import lombok.Data;
 @Data
 public class AuthRequestBody {
 
-    String userName, password;
+    private String userName, password;
 }

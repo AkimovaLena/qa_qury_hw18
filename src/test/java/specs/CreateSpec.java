@@ -27,15 +27,6 @@ public class CreateSpec {
             .log(ALL)
             .build();
 
-    public static ResponseSpecification responseSpec404 = new ResponseSpecBuilder()
-            .expectStatusCode(404)
-            .log(ALL)
-            .build();
-
-    public static ResponseSpecification responseSpec400 = new ResponseSpecBuilder()
-            .expectStatusCode(400)
-            .log(ALL)
-            .build();
 
     public static RequestSpecification createRequestSpec = with()
             .filter(withCustomTemplates())

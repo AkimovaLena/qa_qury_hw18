@@ -4,5 +4,5 @@ import lombok.Data;
 
 @Data
 public class CollectionOfIsbns {
-    String isbn;
+    private String isbn;
 }

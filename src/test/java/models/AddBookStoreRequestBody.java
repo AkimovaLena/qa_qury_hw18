@@ -6,6 +6,6 @@ import java.util.List;
 
 @Data
 public class AddBookStoreRequestBody {
-    String userId;
-    List<CollectionOfIsbns> collectionOfIsbns;
+    private String userId;
+    private List<CollectionOfIsbns> collectionOfIsbns;
 }
